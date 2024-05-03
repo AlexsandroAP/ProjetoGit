@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
-class Produto extends Controller
+class ProdutoController extends Controller
 {
     public readonly Produto $produto;
 
@@ -24,7 +25,7 @@ class Produto extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastre');
     }
 
     /**
