@@ -10,11 +10,20 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
 
-            <a href="{{ route('cadastre') }}">
+            <a href="{{route('cadastre')}}">
                 <button class="rounded-lg bg-green-500 text-white p-4 float-left mb-9">Criar Produto</button>
             </a>
+
+                <ul>
+                    @foreach ($produtos as $produto)
+                        <li>{{ $produto->nome}}</li>
+                    @endforeach
+                </ul>
+
+
+
                 
-                    <table class="min-w-full border border-gray-300">
+                    <!-- <table class="min-w-full border border-gray-300">
                     <thead>
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b text-center">Nome do produto</th>
@@ -55,7 +64,7 @@
                         </tr>
         
                     </tbody>
-                    </table>
+                    </table> -->
 
                 </div>
             </div>
