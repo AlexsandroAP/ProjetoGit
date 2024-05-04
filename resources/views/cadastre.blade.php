@@ -23,7 +23,7 @@
                             <input class="text-black" type="number" name="preco" placeholder="Digite aqui">
 
                             <div class="mt-4 block mt-7">
-                                <a href="{{ route('listarProduto') }}">
+                                <a href="{{ route('produtos.index') }}">
                                     <button type="button" class="rounded-lg bg-red-500 text-white p-4">Cancelar</button>
                                 </a>
 
