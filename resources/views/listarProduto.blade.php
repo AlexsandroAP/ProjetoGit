@@ -23,7 +23,7 @@
 
 
                 
-                    <!-- <table class="min-w-full border border-gray-300">
+                    <table class="min-w-full border border-gray-300">
                     <thead>
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b text-center">Nome do produto</th>
@@ -37,7 +37,6 @@
                     </thead>
 
                     <tbody>
-                        foreach aqui alex
                         <tr class="bg-gray-100 border-b">
                             <td class="px-6 py-4 whitespace-nowrap text-black text-center">Feijão</td>
 
@@ -65,7 +64,7 @@
                         </tr>
         
                     </tbody>
-                    </table> -->
+                    </table>
 
                 </div>
             </div>
