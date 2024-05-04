@@ -10,7 +10,7 @@
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
 
-            <a href="{{route('cadastre')}}">
+            <a href="{{route('produtos.create')}}">
                 <button class="rounded-lg bg-green-500 text-white p-4 float-left mb-9">Criar Produto</button>
             </a>
 
@@ -37,6 +37,7 @@
                     </thead>
 
                     <tbody>
+                        foreach aqui alex
                         <tr class="bg-gray-100 border-b">
                             <td class="px-6 py-4 whitespace-nowrap text-black text-center">Feijão</td>
 
