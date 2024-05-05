@@ -16,7 +16,6 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = $this->produto->all();
-        // return $produtos;
         return view('listarProduto', ['produtos' => $produtos]);
     }
 
@@ -65,6 +64,6 @@ class ProdutoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return view('produto.index');
     }
 }
