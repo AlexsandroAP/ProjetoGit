@@ -4,10 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 
-// Ta vendo essa rota aqui? ela ta fora do middleware auth, q é qm faz verificar se ta logado
-
-
-
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {return view('welcome');});
