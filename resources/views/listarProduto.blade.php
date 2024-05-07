@@ -14,16 +14,6 @@
                 <button class="rounded-lg bg-green-500 text-white p-4 float-left mb-9">Criar Produto</button>
             </a>
 
-                <!-- <ul>
-                    @foreach ($produtos as $produto)
-                        <li>{{ $produto->nome}}</li>
-                        <li>{{ $produto->quantidade}}</li>
-                        <li>{{ $produto->preco}}</li>
-                    @endforeach
-                </ul> -->
-
-
-
                 
                     <table class="min-w-full border border-gray-300">
                     <thead>
@@ -59,9 +49,11 @@
                             
                             <td class="px-6 py-4 text-black whitespace-nowrap text-center">
                                
-                                    <button class="rounded-lg bg-red-500 text-white p-4">Excluir</button>
+                                <button class="rounded-lg bg-red-500 text-white p-4">Excluir</button>
                                 
-                                <button class="rounded-lg bg-blue-500 text-white p-4">Editar</button>
+                                <a href="{{ route('produtos.edit',['produtos' => $produto->id]) }}">
+                                    <button class="rounded-lg bg-blue-500 text-white p-4">Editar</button>
+                                </a>
                             </td>
                         </tr>
 
