@@ -49,11 +49,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        var_dump($produto);
-
-        // return $produto;
-
-        // return view('editarProduto', ['produtos' => $produto]);
+        return view('editarProduto', ['produto' => $produto]);
     }
 
     /**

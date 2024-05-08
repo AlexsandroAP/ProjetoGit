@@ -51,7 +51,7 @@
                                
                                 <button class="rounded-lg bg-red-500 text-white p-4">Excluir</button>
                                 
-                                <a href="{{ route('produtos.edit',['produtos' => $produto->id]) }}">
+                                <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">
                                     <button class="rounded-lg bg-blue-500 text-white p-4">Editar</button>
                                 </a>
                             </td>
