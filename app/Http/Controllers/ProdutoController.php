@@ -24,7 +24,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('cadastre');
+        return view('cadastreProduto');
+        
     }
 
     /**
@@ -32,7 +33,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -48,7 +49,11 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        return view('editarProduto', ['produto' => $produto]);
+        var_dump($produto);
+
+        // return $produto;
+
+        // return view('editarProduto', ['produtos' => $produto]);
     }
 
     /**
