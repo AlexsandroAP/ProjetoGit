@@ -15,6 +15,8 @@
                         @csrf
                             <h1>Adicione um novo produto:</h1>
                             <input class="text-black" type="text" name="nome" value="{{ $produto->nome }}">
+                            
+                           
 
                             <h1 class="mt-7">Quantidade dos produtos:</h1>
                             <input class="text-black" type="text" name="quantidade" value="{{ $produto->quantidade }}">
