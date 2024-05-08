@@ -11,8 +11,10 @@
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         <h1 class="text-3xl mb-10">Cadastro de produtos</h1>
 
-                        <form method="" action="">
+                        <form method="post" action="{{ route('produtos.update',['produto' => $produto -> id]) }}">
                         @csrf
+                            <input type="hidden" name="_method" value="PUT">
+
                             <h1>Adicione um novo produto:</h1>
                             <input class="text-black" type="text" name="nome" value="{{ $produto->nome }}">
                             
