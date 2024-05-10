@@ -33,7 +33,16 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $created = $this->produto->create([
+            'nome'=> $request->input('nome'),
+            'quantidade'=> $request->input('quantidade'),
+            'preco'=> $request->input('preco'),
+        ]);
+
+        if ($created) {
+            return redirect()->route('produtos.index')->with('mensagem','Produto criado');
+        }
+        return redirect()->route('produtos.index')->with('mensagem','Não foi possível criar produto');
     }
 
     /**
@@ -57,14 +66,20 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        var_dump($id);
-    }
+        $updated = $this->produto->where('id', $id)->update($request->except(['_token', '_method']));
 
+        if ($updated) {
+            return redirect()->route('produtos.index')->with('mensagem','Produto editado');
+        } 
+        
+        return redirect()->route('produtos.index')->with('mensagem','Não foi possível editar produto');
+
+    }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        return view('produto.index');
+        //
     }
 }
