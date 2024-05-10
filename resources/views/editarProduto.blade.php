@@ -15,7 +15,7 @@
                         @csrf
                             <input type="hidden" name="_method" value="PUT">
 
-                            <h1>Adicione um novo produto:</h1>
+                            <h1>Edite o produto:</h1>
                             <input class="text-black" type="text" name="nome" value="{{ $produto->nome }}">
                             
                            
