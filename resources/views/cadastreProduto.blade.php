@@ -11,16 +11,18 @@
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         <h1 class="text-3xl mb-10">Cadastro de produtos</h1>
 
-                        <form method="POST" action="">
+                        <form method="post" action="{{route('produtos.store')}}">
                         @csrf
                             <h1>Adicione um novo produto:</h1>
                             <input class="text-black" type="text" name="nome" placeholder="Digite aqui">
 
                             <h1 class="mt-7">Quantidade dos produtos:</h1>
-                            <input class="text-black" type="number" step="0.01" name="quantidade" placeholder="Digite aqui">
+                            <input class="text-black" type="number" name="quantidade" placeholder="Digite aqui">
 
                             <h1 class="mt-7">Preço total dos produtos:</h1>
-                            <input class="text-black" type="number" name="preco" placeholder="Digite aqui">
+                            <input class="text-black"
+                            step="0.01"  
+                            type="number" name="preco" placeholder="Digite aqui">
 
                             <div class="mt-4 block mt-7">
                                 <a href="{{ route('produtos.index') }}">
