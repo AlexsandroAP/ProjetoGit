@@ -5,6 +5,12 @@
         </h2>
     </x-slot>
 
+    @if (session()->has('mensagem'))
+        <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+            {{ session()->get('mensagem') }}
+        </div>
+    @endif
+
     <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -43,7 +49,7 @@
                             </td>
 
                             <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                                    <li>{{ $produto->precoTotal}}</li>
+                                    <li>{{ $produto->preco}}</li>
                                 
                             </td>
                             
