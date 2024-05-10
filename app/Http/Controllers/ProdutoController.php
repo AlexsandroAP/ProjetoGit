@@ -48,9 +48,9 @@ class ProdutoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Produto $produto)
     {
-        //
+        return view('excluirProduto', ['produto' => $produto]);
     }
 
     /**
@@ -80,6 +80,7 @@ class ProdutoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->produto->where('id',$id)->delete();
+        return redirect()->route('produtos.index')->with('mensagem','Produto excluído');;
     }
 }
