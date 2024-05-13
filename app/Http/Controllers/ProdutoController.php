@@ -40,9 +40,9 @@ class ProdutoController extends Controller
         ]);
 
         if ($created) {
-            return redirect()->route('produtos.index')->with('mensagem','Produto criado');
+            return redirect()->route('produtos.index')->with('mensagemCriar','Produto criado');
         }
-        return redirect()->route('produtos.index')->with('mensagem','Não foi possível criar produto');
+        return redirect()->route('produtos.index')->with('mensagemCriar','Não foi possível criar produto');
     }
 
     /**
@@ -69,10 +69,10 @@ class ProdutoController extends Controller
         $updated = $this->produto->where('id', $id)->update($request->except(['_token', '_method']));
 
         if ($updated) {
-            return redirect()->route('produtos.index')->with('mensagem','Produto editado');
+            return redirect()->route('produtos.index')->with('mensagemEditar','Produto editado');
         } 
         
-        return redirect()->route('produtos.index')->with('mensagem','Não foi possível editar produto');
+        return redirect()->route('produtos.index')->with('mensagemEditar','Não foi possível editar produto');
 
     }
     /**
@@ -81,6 +81,6 @@ class ProdutoController extends Controller
     public function destroy(string $id)
     {
         $this->produto->where('id',$id)->delete();
-        return redirect()->route('produtos.index')->with('mensagem','Produto excluído');;
+        return redirect()->route('produtos.index')->with('mensagemDeletar','Produto excluído');;
     }
 }
