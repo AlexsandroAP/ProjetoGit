@@ -26,10 +26,10 @@
 
                             <div class="mt-4 block mt-7">
                                 <a href="{{ route('produtos.index') }}">
-                                    <button type="button" class="rounded-lg bg-red-500 text-white p-4">Cancelar</button>
+                                    <button type="button" class="rounded-lg bg-vermelho text-white p-4">Cancelar</button>
                                 </a>
 
-                                <button type="submit" class="rounded-lg bg-green-500 text-white p-4">Salvar</button>
+                                <button type="submit" class="rounded-lg bg-verde-claro text-white p-4">Salvar</button>
                             </div>
                         </form>
                     
