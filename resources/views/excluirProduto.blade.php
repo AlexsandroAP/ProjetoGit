@@ -18,13 +18,13 @@
                         @csrf
                             <input type="hidden" name="_method" value="DELETE">
 
-                            <h1>Produto:</h1>
+                            <h1 class="mt-10">Produto:</h1>
                             <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="text" name="nome" readonly value="{{ $produto->nome }}">
                             
-                            <h1 class="mt-7">Quantidade dos produtos:</h1>
+                            <h1 class="mt-10">Quantidade dos produtos:</h1>
                             <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" name="quantidade" readonly value="{{ $produto->quantidade }}">
 
-                            <h1 class="mt-7">Preço total dos produtos:</h1>
+                            <h1 class="mt-10">Preço total dos produtos:</h1>
                             <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" 
                             step="0.01" 
                             readonly name="preco" value="{{ $produto->preco }}">
