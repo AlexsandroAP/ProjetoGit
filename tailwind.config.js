@@ -14,8 +14,18 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+
+            colors: {
+                'vermelho': '#C3020E',
+                'verde-claro': '#219E88',
+              },
         },
     },
 
     plugins: [forms],
+
+    
 };
+
+
+  
