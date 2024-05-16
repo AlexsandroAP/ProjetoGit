@@ -11,6 +11,7 @@ export default {
 
     theme: {
         extend: {
+
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
@@ -19,6 +20,7 @@ export default {
                 'vermelho': '#C3020E',
                 'verde-claro': '#219E88',
               },
+
         },
     },
 

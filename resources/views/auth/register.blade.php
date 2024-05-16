@@ -45,7 +45,7 @@
                 {{ __('Já é cadastrado?') }}
             </a>
 
-            <x-primary-button class="ms-4">
+            <x-primary-button class=" bg-verde-claro ms-4">
                 {{ __('Registro') }}
             </x-primary-button>
         </div>
