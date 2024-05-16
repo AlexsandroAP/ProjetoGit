@@ -46,7 +46,8 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3">
+            
+            <x-primary-button class="ms-3" >
                 {{ __('Iniciar sessão') }}
             </x-primary-button>
         </div>
