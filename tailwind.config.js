@@ -19,6 +19,7 @@ export default {
             colors: {
                 'vermelho': '#C3020E',
                 'verde-claro': '#219E88',
+                'cinza': '#111827',
               },
 
         },

@@ -32,10 +32,10 @@
 
                             <div class="mt-10 block mb-5">
                                 <a href="{{ route('produtos.index') }}">
-                                    <button type="button" class="rounded-lg bg-yellow-500 text-white p-4">Cancelar</button>
+                                    <button type="button" class="rounded-lg bg-yellow-500 dark:hover:bg-yellow-600 text-white p-4">Cancelar</button>
                                 </a>
 
-                                <button type="submit" class="ml-2 rounded-lg bg-vermelho text-white p-4">Deletar</button>
+                                <button type="submit" class="ml-2 rounded-lg bg-vermelho dark:hover:bg-red-600 text-white p-4">Deletar</button>
                             </div>
                         </form>
                     

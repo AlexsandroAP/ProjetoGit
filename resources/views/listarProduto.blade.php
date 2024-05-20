@@ -33,70 +33,49 @@
             @if (session()->has('mensagemDeletar'))
             <div class="bg-red-100 border-l-4 border-red-500 text-black p-3 max-w-md mx-auto block relative mb-5" role="alert" id="meuAlerta">
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3 closebtn" onclick="this.parentElement.   style.display='none';">
-                <svg class="fill-current h-6 w-6 text-black" role="button" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.  819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.  697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1. 698z"></path></svg>
+                <svg class="fill-current h-6 w-6 text-black" role="button" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"></path></svg>
                 </span>
                 {{ session()->get('mensagemDeletar') }}
             </div>
             @endif
 
     <table class=" min-w-full border border-gray-300">
-                    <thead>
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do produto</th>
-
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Quantidade</th>
-
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Preço</th>
-
-                            <th class="px-6 py-3 text-left font-thin uppercase text-center">
-                            <a href="{{route('produtos.create')}}">
-                                <button class="rounded-lg bg-verde-claro text-white p-3.5 px-8">Criar Produto</button>
-                            </a>
-                            </th>
-                        </tr>
-                    </thead>
-
-                    @foreach ($produtos as $produto)
-                    <tbody>
-                        <tr class="bg-gray-100 border-b">
-                            <td class="px-6 py-4 whitespace-nowrap text-black text-center">
-                                
-                                    <p>{{ $produto->nome}}</p>
-                                
-                            </td>
-
-                            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                                    <p>{{ $produto->quantidade}}</p>
-                              
-                            </td>
-
-                            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                                    <p>{{ $produto->preco}}</p>
-                                
-                            </td>
-                            
-                            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                               
-                            <a href="{{ route('produtos.show',['produto' => $produto->id]) }}">
-                                    <button class="rounded-lg bg-vermelho text-white p-4">Excluir</button>
-                                </a>
-                                
-                                <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">
-                                    <button class="rounded-lg bg-yellow-500 text-white p-4">Editar</button>
-                                </a>
-                            </td>
-                        </tr>
-
-                    </tbody>
-
-                    @endforeach
-                    </table>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+        <thead>
+            <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do produto</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Quantidade</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Preço</th>
+                <th class="px-6 py-3 text-left font-thin uppercase text-center">
+                    <a href="{{route('produtos.create')}}">
+                    <button class="rounded-lg bg-verde-claro dark:hover:bg-green-700 text-white p-3.5 px-8">Criar Produto</button>
+                    </a>
+            </th>
+        </tr>
+    </thead>
+    @foreach ($produtos as $produto)
+    <tbody>
+        <tr class="bg-gray-100 border-b">
+            <td class="px-6 py-4 whitespace-nowrap text-black text-center">
+                <p>{{ $produto->nome}}</p>
+            </td>
+            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                <p>{{ $produto->quantidade}}</p>
+            </td>
+            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                <p>{{ $produto->preco}}</p>
+            </td>
+            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                <a href="{{ route('produtos.show',['produto' => $produto->id]) }}">
+                <button class="rounded-lg dark:hover:bg-red-600 bg-vermelho text-white p-4">Excluir</button>
+            </a>
+            <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">
+            <button class="rounded-lg dark:hover:bg-yellow-600 bg-yellow-500 text-white p-4">Editar</button>
+        </a>
+    </td>
+        </tr>
+    </tbody>
+    @endforeach
+</table>
 </x-app-layout>
 
 
