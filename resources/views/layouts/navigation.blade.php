@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center h-16">
                     <a href="{{ route('produtos.index') }}">
-                        <img class="object-scale-down h-40 w-40" src="/imagens/logo.jpeg" alt="Logo" />
+                        <img class="object-scale-down h-40 w-40" src="/imagens/logoMarca.png" alt="Logo" />
                     </a>
                 </div>
 
