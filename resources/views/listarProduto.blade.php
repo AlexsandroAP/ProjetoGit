@@ -49,35 +49,39 @@
                     <a href="{{route('produtos.create')}}">
                     <button class="rounded-lg bg-verde-claro dark:hover:bg-green-700 text-white p-3.5 px-8">Criar Produto</button>
                     </a>
-            </th>
-        </tr>
-    </thead>
-    @foreach ($produtos as $produto)
+                </th>
+            </tr>
+        </thead>
     <tbody>
+    @if($produtos->isEmpty())
         <tr class="bg-gray-100 border-b">
-            <td class="px-6 py-4 whitespace-nowrap text-black text-center">
-                <p>{{ $produto->nome}}</p>
-            </td>
-            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                <p>{{ $produto->quantidade}}</p>
-            </td>
-            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                <p>{{ $produto->preco}}</p>
-            </td>
-            <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                <a href="{{ route('produtos.show',['produto' => $produto->id]) }}">
-                    <button class="rounded-lg dark:hover:bg-red-600 bg-vermelho text-white p-4">Excluir</button>
-                </a>
-                <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">
-                    <button class="rounded-lg dark:hover:bg-yellow-600 bg-yellow-500 text-white p-4">Editar</button>
-                </a>
-            </td>
+            <td colspan="4" class="py-4 whitespace-nowrap text-gray-600 text-center">Não há produtos cadastrados.</td>
         </tr>
-        @empty
-        
-    </tbody>
+    @endif
+    @foreach ($produtos as $produto)
+            <tr class="bg-gray-100 border-b">
+                <td class="px-6 py-4 whitespace-nowrap text-black text-center">
+                    <p>{{ $produto->nome}}</p>
+                </td>
+                <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                    <p>{{ $produto->quantidade}}</p>
+                </td>
+                <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                    <p>{{ $produto->preco}}</p>
+                </td>
+                <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                    <a href="{{ route('produtos.show',['produto' => $produto->id]) }}">
+                    <button class="rounded-lg dark:hover:bg-red-600 bg-vermelho text-white p-4">Excluir</button>
+                    </>
+                    <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">
+                        <button class="rounded-lg dark:hover:bg-yellow-600 bg-yellow-500 text-white p-4">Editar</button>
+                    </a>
+                </td>
+            </tr>
     @endforeach
-</table>
+   
+    </tbody>
+    </table>
 </x-app-layout>
 
 
