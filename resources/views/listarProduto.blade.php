@@ -55,7 +55,7 @@
     <tbody>
     @if($produtos->isEmpty())
         <tr class="bg-gray-100 border-b">
-            <td colspan="4" class="py-4 whitespace-nowrap text-gray-600 text-center">Não há produtos cadastrados.</td>
+            <td colspan="4" class="py-6 whitespace-nowrap text-gray-600 text-center">Não há produtos cadastrados.</td>
         </tr>
     @endif
     @foreach ($produtos as $produto)
