@@ -39,12 +39,13 @@
             </div>
             @endif
 
-    <table class=" min-w-full border border-gray-300">
+    <div class="overflow-auto">
+    <table class=" w-full md:min-w-full border border-gray-300">
         <thead>
             <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do produto</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Quantidade</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Preço</th>
+                <th class="px-2 md:px-6 py-3 text-xs md:text-left font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do produto</th>
+                <th class="px-2 md:px-6 py-3 text-xs md:text-left font-medium text-gray-300 uppercase tracking-wider border-b text-center">Quantidade</th>
+                <th class="px-2 md:px-6 py-3 text-xs md:text-left font-medium text-gray-300 uppercase tracking-wider border-b text-center">Preço</th>
                 <th class="px-6 py-3 text-left font-thin uppercase text-center">
                     <a href="{{route('produtos.create')}}">
                     <button class="rounded-lg bg-verde-claro dark:hover:bg-green-700 text-white p-3.5 px-8">Criar Produto</button>
@@ -82,6 +83,7 @@
    
     </tbody>
     </table>
+    </div>
 </x-app-layout>
 
 
