@@ -68,7 +68,7 @@
                     <p>{{ $produto->quantidade}}</p>
                 </td>
                 <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                    <p>{{ $produto->preco}}</p>
+                    <p>R$ {{ $produto->preco}}</p>
                 </td>
                 <td class="px-6 py-4 text-black whitespace-nowrap text-center">
                     <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">

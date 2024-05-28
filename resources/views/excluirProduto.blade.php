@@ -11,7 +11,7 @@
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         <h1 class="text-3xl mb-10">Você tem certeza que deseja excluir o produto: 
                             
-                            {{ $produto->nome }}
+                            {{ $produto->nome }}?
                         </h1>
 
                         
