@@ -33,6 +33,12 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nome' => 'required',
+            'quantidade' => 'required',
+            'preco' => 'required',
+        ]);
+
         $created = $this->produto->create([
             'nome'=> $request->input('nome'),
             'quantidade'=> $request->input('quantidade'),
@@ -66,6 +72,12 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'nome' => 'required',
+            'quantidade' => 'required',
+            'preco' => 'required',
+        ]);
+
         $updated = $this->produto->where('id', $id)->update($request->except(['_token', '_method']));
 
         if ($updated) {
