@@ -21,10 +21,10 @@
                             <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="text" name="nome" value="{{ $produto->nome }}">
 
                             <h1 class="mt-10">Quantidade dos produtos:</h1>
-                            <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" name="quantidade" value="{{ $produto->quantidade }}">
+                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" name="quantidade" value="{{ $produto->quantidade }}">
 
                             <h1 class="mt-10">Preço total dos produtos:</h1>
-                            <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" 
+                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" 
                             step="0.01" name="preco" value="{{ $produto->preco }}">
 
                             <div class="mt-10 block mb-5">

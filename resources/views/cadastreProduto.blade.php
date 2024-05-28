@@ -17,10 +17,10 @@
                             <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="text" name="nome" required placeholder="Digite aqui">
 
                             <h1 class="mt-10">Quantidade dos produtos:</h1>
-                            <input class=" w-64 mt-2 text-black rounded-lg" type="number" name="quantidade" required placeholder="Digite aqui">
+                            <input min="0" max="100000" class=" w-64 mt-2 text-black rounded-lg" type="number" name="quantidade" required placeholder="Digite aqui">
 
                             <h1 class="mt-10">Preço total dos produtos:</h1>
-                            <input class=" w-64 h-10 mt-2 text-black rounded-lg"
+                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg"
                             step="0.01"  
                             type="number" required  name="preco" placeholder="Digite aqui">
 
