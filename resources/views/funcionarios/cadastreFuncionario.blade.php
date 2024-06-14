@@ -16,11 +16,25 @@
                             <h1>Adicione um(a) novo(a) funcionario(a):</h1>
                             <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="text" name="nome"  placeholder="Digite aqui">
 
-                            <h1 class="mt-10">CPF do(a) funcionario(a):</h1>
-                            <input class="w-64 mt-2 text-black rounded-lg" type="text" name="cpf" placeholder="Digite aqui" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <h1 class="mt-10">Cargo do(a) funcionario(a):</h1>
+                            <input class=" w-64 mt-2 text-black rounded-lg" type="text" name="cargo"  placeholder="Digite aqui">
 
-                            <h1 class="mt-10">Bairro do(a) funcionario(a):</h1>
-                            <input class=" w-64 mt-2 text-black rounded-lg" type="text" name="quantidade"  placeholder="Digite aqui">
+                            <h1 class="mt-10">CPF do(a) funcionario(a):</h1>
+
+                            <script>
+                                function formatarCPF(campo) {
+                                    let cpf = campo.value;
+                                    cpf = cpf.replace(/\D/g, "");
+                                    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+                                    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+                                    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+                                    campo.value = cpf;
+                                }
+                            </script>
+
+                            <input class="w-64 mt-2 text-black rounded-lg" type="text" name="cpf" placeholder="Digite aqui" maxlength="14" oninput="formatarCPF(this)" onblur="validarCPF(this)">
+
+
 
                             <div class="mt-10 block mb-5">
                                 <a href="{{ route('funcionarios.index') }}">
@@ -30,7 +44,7 @@
                                 <button type="submit" class="ml-2 px-6 rounded-lg bg-verde-claro dark:hover:bg-green-700 text-white p-4">Salvar</button>
                             </div>
                         </form>
-                    
+
 
                     </div>
                 </div>

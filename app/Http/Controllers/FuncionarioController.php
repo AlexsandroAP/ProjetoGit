@@ -31,14 +31,14 @@ class FuncionarioController extends Controller
     {
         $request->validate([
             'nome' => 'required',
+            'cargo' => 'required',
             'cpf' => 'required',
-            'bairro' => 'required',
         ]);
 
         $created = $this->funcionario->create([
             'nome'=> $request->input('nome'),
+            'cargo'=> $request->input('cargo'),
             'cpf'=> $request->input('cpf'),
-            'bairro'=> $request->input('bairro'),
         ]);
 
         if ($created) {
@@ -52,7 +52,7 @@ class FuncionarioController extends Controller
      */
     public function show(Funcionario $funcionario)
     {
-        return view('excluirFuncionario', ['funcionario' => $funcionario]);
+        return view('funcionarios.excluirFuncionario', ['funcionario' => $funcionario]);
     }
 
     /**
@@ -60,7 +60,7 @@ class FuncionarioController extends Controller
      */
     public function edit(Funcionario $funcionario)
     {
-        return view('editarFuncionario', ['funcionario' => $funcionario]);
+        return view('funcionarios.editarFuncionario', ['funcionario' => $funcionario]);
     }
 
     /**
@@ -76,8 +76,8 @@ class FuncionarioController extends Controller
 
         if ($updated) {
             return redirect()->route('funcionarios.index')->with('mensagemEditarFuncionario','Funcionario editada');
-        } 
-        
+        }
+
         return redirect()->route('funcionarios.index')->with('mensagemEditarFuncionario','Não foi possível editar funcionario');
 
     }
@@ -87,6 +87,6 @@ class FuncionarioController extends Controller
     public function destroy(string $id)
     {
         $this->funcionario->where('id',$id)->delete();
-        return redirect()->route('funcionarios.index')->with('mensagemDeletarFuncionario','Funcionario excluída');
+        return redirect()->route('funcionarios.index')->with('mensagemDeletarFuncionario','Funcionario excluído');
     }
 }
