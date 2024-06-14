@@ -16,12 +16,12 @@ class CategoriaController extends Controller
     public function index()
     {
         $categorias = $this->categoria->all();
-        return view('listarCategoria', ['categorias' => $categorias]);
+        return view('categorias.listarCategoria', ['categorias' => $categorias]);
     }
 
     public function create()
     {
-        return view('cadastreCategoria');
+        return view('categorias.cadastreCategoria');
     }
 
     /**
@@ -48,7 +48,7 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        return view('excluirCategoria', ['categoria' => $categoria]);
+        return view('categorias.excluirCategoria', ['categoria' => $categoria]);
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        return view('editarCategoria', ['categoria' => $categoria]);
+        return view('categorias.editarCategoria', ['categoria' => $categoria]);
     }
 
     /**
@@ -72,8 +72,8 @@ class CategoriaController extends Controller
 
         if ($updated) {
             return redirect()->route('categorias.index')->with('mensagemEditarCategoria','Categoria editada');
-        } 
-        
+        }
+
         return redirect()->route('categorias.index')->with('mensagemEditarCategoria','Não foi possível editar categoria');
 
     }
