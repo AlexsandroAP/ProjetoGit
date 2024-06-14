@@ -43,38 +43,38 @@
     <table class=" w-full md:min-w-full border border-gray-300">
         <thead>
             <tr>
-                <th class="px-2 md:px-6 py-3 text-xs  font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do produto</th>
-                <th class="px-2 md:px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Quantidade</th>
-                <th class="px-2 md:px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Preço</th>
+                <th class="px-2 md:px-6 py-3 text-xs  font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do funcionario</th>
+                <th class="px-2 md:px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">CPF</th>
+                <th class="px-2 md:px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Bairro</th>
                 <th class="px-6 py-3 text-left font-thin uppercase text-center">
-                    <a href="{{route('produtos.create')}}">
-                    <button class="rounded-lg bg-verde-claro dark:hover:bg-green-700 text-white p-3.5 px-8">Criar Produto</button>
+                    <a href="{{route('funcionarios.create')}}">
+                    <button class="rounded-lg bg-verde-claro dark:hover:bg-green-700 text-white p-3.5 px-8">Inserir Funcionario</button>
                     </a>
                 </th>
             </tr>
         </thead>
     <tbody>
-    @if($produtos->isEmpty())
+    @if($funcionarios->isEmpty())
         <tr class="bg-gray-100 border-b">
-            <td colspan="4" class="py-6 whitespace-nowrap text-gray-600 text-center">Não há produtos cadastrados.</td>
+            <td colspan="4" class="py-6 whitespace-nowrap text-gray-600 text-center">Não há funcionarios cadastrados.</td>
         </tr>
     @endif
-    @foreach ($produtos as $produto)
+    @foreach ($funcionarios as $funcionario)
             <tr class="bg-gray-100 border-b">
                 <td class="px-6 py-4 whitespace-nowrap text-black text-center">
-                    <p>{{ $produto->nome}}</p>
+                    <p>{{ $funcionario->nome}}</p>
                 </td>
                 <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                    <p>{{ $produto->quantidade}}</p>
+                    <p>{{ $funcionario->cpf}}</p>
                 </td>
                 <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                    <p>R$ {{ number_format($produto->preco, 2, ',', '.') }}</p>
+                    <p>{{ $funcionario->bairro }}</p>
                 </td>
                 <td class="px-6 py-4 text-black whitespace-nowrap text-center">
-                    <a href="{{ route('produtos.edit',['produto' => $produto->id]) }}">
+                    <a href="{{ route('funcionarios.edit',['funcionario' => $funcionario->id]) }}">
                         <button class="rounded-lg dark:hover:bg-yellow-600 bg-yellow-500 text-white p-4">Editar</button>
                     </a>
-                    <a href="{{ route('produtos.show',['produto' => $produto->id]) }}">
+                    <a href="{{ route('funcionarios.show',['funcionario' => $funcionario->id]) }}">
                     <button class="rounded-lg dark:hover:bg-red-600 bg-vermelho text-white p-4">Excluir</button>
                     </>
                 </td>
