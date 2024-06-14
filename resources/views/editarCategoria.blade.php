@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Produtos') }}
+            {{ __('Categorias') }}
         </h2>
     </x-slot>
 
@@ -9,24 +9,17 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        <h1 class="text-3xl mb-10">Editar o produto: {{ $produto->nome }}</h1>
+                        <h1 class="text-3xl mb-10">Editar a categoria: {{ $categoria->nome }}</h1>
 
-                        <form method="post" action="{{ route('produtos.update',['produto' => $produto->id]) }}">
+                        <form method="post" action="{{ route('categorias.update',['categoria' => $categoria->id]) }}">
                         @csrf
                             <input type="hidden" name="_method" value="PUT">
 
-                            <h1 class="mt-10">Edite o produto:</h1>
-                            <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="text" name="nome" value="{{ $produto->nome }}">
-
-                            <h1 class="mt-10">Quantidade dos produtos:</h1>
-                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" name="quantidade" value="{{ $produto->quantidade }}">
-
-                            <h1 class="mt-10">Preço total dos produtos:</h1>
-                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg" type="number" 
-                            step="0.01" name="preco" value="{{ $produto->preco }}">
+                            <h1 class="mt-10">Edite a categoria:</h1>
+                            <input class=" w-64 h-10 mt-2 text-black rounded-lg" type="text" name="nome" value="{{ $categoria->nome }}">
 
                             <div class="mt-10 block mb-5">
-                                <a href="{{ route('produtos.index') }}">
+                                <a href="{{ route('categorias.index') }}">
                                     <button type="button" class="rounded-lg bg-vermelho dark:hover:bg-red-600 text-white p-4">Cancelar</button>
                                 </a>
 

@@ -38,7 +38,7 @@ class CategoriaController extends Controller
         ]);
 
         if ($created) {
-            return redirect()->route('categoriass.index')->with('mensagemCriarCategoria','Categoria criado');
+            return redirect()->route('categorias.index')->with('mensagemCriarCategoria','Categoria criada');
         }
         return redirect()->route('categorias.index')->with('mensagemCriarCategoria','Não foi possível criar categoria');
     }
@@ -71,7 +71,7 @@ class CategoriaController extends Controller
         $updated = $this->categoria->where('id', $id)->update($request->except(['_token', '_method']));
 
         if ($updated) {
-            return redirect()->route('categorias.index')->with('mensagemEditarCategoria','Categoria editado');
+            return redirect()->route('categorias.index')->with('mensagemEditarCategoria','Categoria editada');
         } 
         
         return redirect()->route('categorias.index')->with('mensagemEditarCategoria','Não foi possível editar categoria');
@@ -83,7 +83,7 @@ class CategoriaController extends Controller
     public function destroy(string $id)
     {
         $this->categoria->where('id',$id)->delete();
-        return redirect()->route('categorias.index')->with('mensagemDeletarCategoria','Categoria excluído');
+        return redirect()->route('categorias.index')->with('mensagemDeletarCategoria','Categoria excluída');
     }
 }
 
