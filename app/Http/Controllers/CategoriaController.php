@@ -16,12 +16,12 @@ class CategoriaController extends Controller
     public function index()
     {
         $categorias = $this->categoria->all();
-        return view('categorias.listarCategoria', ['categorias' => $categorias]);
+        return view('cruds.categorias.listarCategoria', ['categorias' => $categorias]);
     }
 
     public function create()
     {
-        return view('categorias.cadastreCategoria');
+        return view('cruds.categorias.cadastreCategoria');
     }
 
     /**
@@ -48,7 +48,7 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        return view('categorias.excluirCategoria', ['categoria' => $categoria]);
+        return view('cruds.categorias.excluirCategoria', ['categoria' => $categoria]);
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        return view('categorias.editarCategoria', ['categoria' => $categoria]);
+        return view('cruds.categorias.editarCategoria', ['categoria' => $categoria]);
     }
 
     /**

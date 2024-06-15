@@ -16,7 +16,7 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = $this->produto->all();
-        return view('listarProduto', ['produtos' => $produtos]);
+        return view('cruds.produtos.listarProduto', ['produtos' => $produtos]);
     }
 
     /**
@@ -24,7 +24,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('cadastreProduto');
+        return view('cruds.produtos.cadastreProduto');
         
     }
 
@@ -56,7 +56,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        return view('excluirProduto', ['produto' => $produto]);
+        return view('cruds.produtos.excluirProduto', ['produto' => $produto]);
     }
 
     /**
@@ -64,7 +64,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        return view('editarProduto', ['produto' => $produto]);
+        return view('cruds.produtos.editarProduto', ['produto' => $produto]);
     }
 
     /**
