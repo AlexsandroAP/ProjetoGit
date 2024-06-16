@@ -11,6 +11,14 @@ export default {
 
     theme: {
         extend: {
+            borderRadius: {
+                'extra-lg': '1.5rem',
+            },
+
+            spacing: {
+                '20rem': '20rem',
+                '15rem': '10rem',
+              },
 
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],

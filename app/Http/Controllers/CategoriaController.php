@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoriaUpdateSupport;
 
 class CategoriaController extends Controller
 {
@@ -27,7 +28,7 @@ class CategoriaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoriaUpdateSupport $request)
     {
         $request->validate([
             'nome' => 'required',
@@ -62,7 +63,7 @@ class CategoriaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CategoriaUpdateSupport $request, string $id)
     {
         $request->validate([
             'nome' => 'required',

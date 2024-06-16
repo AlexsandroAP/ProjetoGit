@@ -67,8 +67,8 @@
                         <button class="rounded-lg dark:hover:bg-yellow-600 bg-yellow-500 text-white p-4">Editar</button>
                     </a>
                     <a href="{{ route('categorias.show',['categoria' => $categoria->id]) }}">
-                    <button class="rounded-lg dark:hover:bg-red-600 bg-vermelho text-white p-4">Excluir</button>
-                    </>
+                        <button class="rounded-lg dark:hover:bg-red-600 bg-vermelho text-white p-4">Excluir</button>
+                    </a>
                 </td>
             </tr>
     @endforeach

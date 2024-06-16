@@ -45,6 +45,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('produtos.index', absolute: false));
+        return redirect(route('telaInicial', absolute: false));
     }
 }

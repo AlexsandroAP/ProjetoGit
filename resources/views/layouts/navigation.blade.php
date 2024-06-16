@@ -5,12 +5,18 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center h-16">
-                    <a href="{{ route('produtos.index') }}">
+                    <a href="{{ route('telaInicial') }}">
                         <img class="object-scale-down h-40 w-40" src="/imagens/logoMarca.png" alt="Logo" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('telaInicial')" :active="request()->routeIs('telaInicial')">
+                        {{ __('Tela Inicial') }}
+                    </x-nav-link>
+                </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
@@ -79,15 +85,23 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        
+
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('produtos.index')" :active="request()->routeIs('produtos.index')">
-                {{ __('Produtos') }}
+            <x-responsive-nav-link :href="route('telaInicial')" :active="request()->routeIs('telaInicial')">
+                {{ __('Tela Inicial') }}
             </x-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
                 {{ __('Categorias') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('produtos.index')" :active="request()->routeIs('produtos.index')">
+                {{ __('Produtos') }}
             </x-responsive-nav-link>
         </div>
 

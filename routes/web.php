@@ -11,6 +11,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/telaInicial', function () {return view('telaInicial');})->name('telaInicial');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -24,6 +26,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/produtos/{produto}', [ProdutoController::class, 'update'])->name('produtos.update');
     Route::delete('/produtos/{produto}', [ProdutoController::class, 'destroy'])->name('produtos.destroy');
 
+    //Categorias
     Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias.index');
     Route::get('/categorias/create', [CategoriaController::class, 'create'])->name('categorias.create');
     Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
@@ -32,7 +35,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/categorias/{categoria}', [CategoriaController::class, 'update'])->name('categorias.update');
     Route::delete('/categorias/{categoria}', [CategoriaController::class, 'destroy'])->name('categorias.destroy');
     
-
+    //Funcionários
     Route::get('/funcionarios', [FuncionarioController::class, 'index'])->name('funcionarios.index');
     Route::get('/funcionarios/create', [FuncionarioController::class, 'create'])->name('funcionarios.create');
     Route::post('/funcionarios', [FuncionarioController::class, 'store'])->name('funcionarios.store');

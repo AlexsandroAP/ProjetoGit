@@ -44,6 +44,7 @@
         <thead>
             <tr>
                 <th class="px-2 md:px-6 py-3 text-xs  font-medium text-gray-300 uppercase tracking-wider border-b text-center">Nome do produto</th>
+                <th class="px-2 md:px-6 py-3 text-xs  font-medium text-gray-300 uppercase tracking-wider border-b text-center">Categoria</th>
                 <th class="px-2 md:px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Quantidade</th>
                 <th class="px-2 md:px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider border-b text-center">Preço</th>
                 <th class="px-6 py-3 text-left font-thin uppercase text-center">
@@ -63,6 +64,9 @@
             <tr class="bg-gray-100 border-b">
                 <td class="px-6 py-4 whitespace-nowrap text-black text-center">
                     <p>{{ $produto->nome}}</p>
+                </td>
+                <td class="px-6 py-4 text-black whitespace-nowrap text-center">
+                    <p>{{ $produto->categoria}}</p>
                 </td>
                 <td class="px-6 py-4 text-black whitespace-nowrap text-center">
                     <p>{{ $produto->quantidade}}</p>

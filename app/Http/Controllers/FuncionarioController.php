@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
-use Illuminate\Http\Request;
+use App\Http\Requests\FuncionarioUpdateSupport;
 
 class FuncionarioController extends Controller
 {
@@ -27,14 +27,8 @@ class FuncionarioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(FuncionarioUpdateSupport $request)
     {
-        $request->validate([
-            'nome' => 'required',
-            'cargo' => 'required',
-            'cpf' => 'required',
-        ]);
-
         $created = $this->funcionario->create([
             'nome'=> $request->input('nome'),
             'cargo'=> $request->input('cargo'),
@@ -66,7 +60,7 @@ class FuncionarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(FuncionarioUpdateSupport $request, string $id)
     {
         $request->validate([
             'nome' => 'required',

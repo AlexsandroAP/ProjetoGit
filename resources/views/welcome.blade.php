@@ -9,7 +9,7 @@
     <h1 class="text-4xl font-bold text-white mb-4">Bem-vindo de volta {{ Auth::user()->name }}!<h1>
     <p class="text-xl text-white mb-8">Estamos muito felizes em tê-lo aqui. Explore nosso site.</p>
 
-    <a href="{{ route('produtos.index') }}">
+    <a href="{{ route('telaInicial') }}">
         <x-primary-button>
             {{ __('Entrar Novamente') }}
         </x-primary-button>
@@ -25,7 +25,7 @@
         </x-primary-button>
     </a>
 
-    <a href="{{route('produtos.index')}}">
+    <a href="{{route('telaInicial')}}">
             <x-primary-button class="ml-2">
                 {{ __('Login') }}
             </x-primary-button>
