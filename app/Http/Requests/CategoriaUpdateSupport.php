@@ -24,7 +24,6 @@ class CategoriaUpdateSupport extends FormRequest
         return [
             'nome' => [
                 'required',
-                'unique:categorias',
             ],
         ];
     }

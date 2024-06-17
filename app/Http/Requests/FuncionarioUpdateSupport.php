@@ -32,7 +32,6 @@ class FuncionarioUpdateSupport extends FormRequest
 
             'cpf' => [
                 'required',
-                'unique:funcionarios',
             ],
         ];
     }

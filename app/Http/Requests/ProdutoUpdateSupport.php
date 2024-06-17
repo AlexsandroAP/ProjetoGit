@@ -24,7 +24,6 @@ class ProdutoUpdateSupport extends FormRequest
         return [
             'nome' => [
                 'required',
-                'unique:produtos'
             ],
             
             'quantidade' => [
