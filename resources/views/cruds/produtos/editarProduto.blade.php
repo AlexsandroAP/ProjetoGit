@@ -87,8 +87,32 @@
     @endif
 
                             <h1 class="mt-10">Preço total dos produtos:</h1>
-                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg" type="number"
-                            step="0.01" name="preco" value="{{ $produto->preco }}">
+                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg" type="text"
+                            step="0.01" name="preco" onKeyUp="mascaraMoeda(this, event)" value="{{ number_format($produto->preco, 2, ',', '.') }}">
+
+                            <script>
+                            String.prototype.reverse = function(){
+                                return this.split('').reverse().join(''); 
+                                };
+
+                                function mascaraMoeda(campo,evento){
+                                var tecla = (!evento) ? window.event.keyCode : evento.which;
+                                var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
+                                var resultado  = "";
+                                var mascara = "##.###.###,##".reverse();
+                                for (var x=0, y=0; x<mascara.length && y<valor.length;) {
+                                    if (mascara.charAt(x) != '#') {
+                                    resultado += mascara.charAt(x);
+                                    x++;
+                                    } else {
+                                    resultado += valor.charAt(y);
+                                    y++;
+                                    x++;
+                                    }
+                                }
+                                campo.value = resultado.reverse();
+                                }
+                            </script>
 
                             @if ($errors->any())
         @foreach ($errors->get('preco') as $error)

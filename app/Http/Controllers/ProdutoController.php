@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produto;
+use Illuminate\Http\Request;
 use App\Http\Requests\ProdutoUpdateSupport;
 
 class ProdutoController extends Controller
@@ -32,20 +33,23 @@ class ProdutoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ProdutoUpdateSupport $request)
-    {
-        $created = $this->produto->create([
-            'nome'=> $request->input('nome'),
-            'quantidade'=> $request->input('quantidade'),
-            'preco'=> $request->input('preco'),
-            'categoria'=> $request->input('categoria'),
-        ]);
+    public function store(Request $request)
+{
+    // Remover caracteres não numéricos do valor do preço
+    $preco = str_replace(['.', ','], ['', '.'], $request->input('preco'));
 
-        if ($created) {
-            return redirect()->route('produtos.index')->with('mensagemCriar','Produto criado');
-        }
-        return redirect()->route('produtos.create')->with('mensagemCriar','Não foi possível criar produto');
+    $produto = new Produto();
+    $produto->nome = $request->input('nome');
+    $produto->quantidade = $request->input('quantidade');
+    $produto->preco = $preco; // Salva o valor numérico sem formatação
+    $produto->categoria = $request->input('categoria');
+
+    if ($produto->save()) {
+        return redirect()->route('produtos.index')->with('mensagemCriar', 'Produto criado');
+    } else {
+        return redirect()->route('produtos.create')->with('mensagemCriar', 'Não foi possível criar produto');
     }
+}
 
     /**
      * Display the specified resource.
@@ -67,16 +71,23 @@ class ProdutoController extends Controller
      * Update the specified resource in storage.
      */
     public function update(ProdutoUpdateSupport $request, string $id)
-    {
-        $updated = $this->produto->where('id', $id)->update($request->except(['_token', '_method']));
+{
+    // Remover caracteres não numéricos do valor do preço
+    $preco = str_replace(['.', ','], ['', '.'], $request->input('preco'));
 
-        if ($updated) {
-            return redirect()->route('produtos.index')->with('mensagemEditar','Produto editado');
-        } 
-        
-        return redirect()->route('produtos.index')->with('mensagemEditar','Não foi possível editar produto');
+    $updated = $this->produto->where('id', $id)->update([
+        'nome' => $request->input('nome'),
+        'quantidade' => $request->input('quantidade'),
+        'preco' => $preco,
+        'categoria' => $request->input('categoria'),
+    ]);
 
+    if ($updated) {
+        return redirect()->route('produtos.index')->with('mensagemEditar', 'Produto editado');
+    } else {
+        return redirect()->route('produtos.index')->with('mensagemEditar', 'Não foi possível editar produto');
     }
+}
     /**
      * Remove the specified resource from storage.
      */

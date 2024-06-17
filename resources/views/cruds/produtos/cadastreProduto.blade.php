@@ -53,8 +53,6 @@
                                         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                             echo '<option>' . $row["nome"] . '</option>';
                                         }
-                                    } else {
-                                        echo '<option value="">Insira uma categoria primeiro!</option>';
                                     }
                                     ?>
                                 </select>
@@ -86,9 +84,32 @@
     @endif
 
                             <h1 class="mt-10">Preço total dos produtos:</h1>
-                            <input min="0" max="100000" class=" w-64 h-10 mt-2 text-black rounded-lg"
-                            step="0.01"  
-                            type="number"   name="preco" placeholder="Digite aqui">
+                            <input class=" w-64 h-10 mt-2 text-black rounded-lg"
+                            type="text" onKeyUp="mascaraMoeda(this, event)" name="preco" placeholder="Digite aqui">
+
+                            <script>
+                            String.prototype.reverse = function(){
+                                return this.split('').reverse().join(''); 
+                                };
+
+                                function mascaraMoeda(campo,evento){
+                                var tecla = (!evento) ? window.event.keyCode : evento.which;
+                                var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
+                                var resultado  = "";
+                                var mascara = "##.###.###,##".reverse();
+                                for (var x=0, y=0; x<mascara.length && y<valor.length;) {
+                                    if (mascara.charAt(x) != '#') {
+                                    resultado += mascara.charAt(x);
+                                    x++;
+                                    } else {
+                                    resultado += valor.charAt(y);
+                                    y++;
+                                    x++;
+                                    }
+                                }
+                                campo.value = resultado.reverse();
+                                }
+                            </script>
 
                             @if ($errors->any())
         @foreach ($errors->get('preco') as $error)
